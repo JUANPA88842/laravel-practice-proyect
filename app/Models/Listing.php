@@ -1,29 +1,11 @@
 <?php
-    namespace App\Models;
 
-    class Listing {
-        public static function all(){
-            return [
-                [
-                    'id' => 1,
-                    'title' => 'Listing one',
-                    'description' => 'Lorem Ipsum'
-                ],
-                [
-                    'id' => 2,
-                    'title' => 'Listing two',
-                    'description' => 'Lorem Ipsum'
-                ]
-            ];
-        }
+namespace App\Models;
 
-        public static function find($id){
-            $listings = self::all();
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-            foreach($listings as $listing){
-                if($listing['id'] == $id){
-                    return $listing;
-                }
-            }
-        }
-    }
+class Listing extends Model
+{
+    use HasFactory;
+}
